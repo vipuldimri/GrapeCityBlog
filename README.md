@@ -37,8 +37,9 @@ Default Users
      -------------------------------------------------------------------------------------------------------------
      Database
      SQL Server
+     -> Provide connection string in appsettings
      
-       "ConnectionStrings":
+         "ConnectionStrings":
           {
                "sqlConnection": "Server=INGURWN120084\\SQLEXPRESS01;Database=GrapeCityDB;Trusted_Connection=True;"
           }
