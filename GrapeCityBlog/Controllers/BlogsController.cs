@@ -88,6 +88,7 @@ namespace GrapeCityBlog.Controllers
         /// <returns>A response contains newly created blog</returns>
         /// <response code="201">If everyting is fine return newly created blog</response>
         /// <response code="500">If there was an internal server error</response>
+        /// <response code="400">Invalid Request</response>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -112,11 +113,12 @@ namespace GrapeCityBlog.Controllers
         /// <response code="204">If everyting is fine delete blog with provided id</response>
         /// <response code="500">If there was an internal server error</response>
         /// <response code="404">Blog with supplied id does not exist</response>
-
+        /// <response code="400">Invalid Request</response>
         [HttpDelete("{blogId}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteBlog(int blogId)
         {
             var dbblog = await _repository.GetBlog(blogId, false);
@@ -143,11 +145,12 @@ namespace GrapeCityBlog.Controllers
         /// <response code="204">If everyting is fine delete blog with provided id</response>
         /// <response code="500">If there was an internal server error</response>
         /// <response code="404">Blog with supplied id does not exist</response>
-
+        /// <response code="400">Invalid Request</response>
         [HttpPut("{blogId}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> UpdateBlog(int blogId , [FromBody] BlogForUpdationDTO blogForUpdationDTO)
         {
             var dbblog = await _repository.GetBlog(blogId, true);

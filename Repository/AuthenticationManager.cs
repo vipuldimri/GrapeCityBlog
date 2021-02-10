@@ -21,8 +21,8 @@ namespace Repository
         public string _message;
         public AuthenticationManager(UserManager<User> userManager, IConfiguration configuration)
         {
-            _userManager = userManager;
-            _configuration = configuration;
+            _userManager   =  userManager;
+            _configuration =  configuration;
         }
         public async Task<bool> ValidateUser(LoginDTO userForAuth)
         {
