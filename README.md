@@ -1,8 +1,8 @@
 # GrapeCityBlog
 -----------------------------------------------------------
-How To Run
+How To Setup Database
 
-1.  Update-Database
+1. Run "Update-Database" Command on Package Manager Console
 
 ----------------------------------------------
 Default Role
