@@ -38,6 +38,11 @@ Default Users
      Database
      SQL Server
      
+       "ConnectionStrings":
+          {
+               "sqlConnection": "Server=INGURWN120084\\SQLEXPRESS01;Database=GrapeCityDB;Trusted_Connection=True;"
+          }
+     
      -------------------------------------------------------------------------------------------------------------
      URLS
      
